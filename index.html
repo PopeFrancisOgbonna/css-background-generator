@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Background Generator</title>
+</head>
+<body id="body">
+    <div class="container">
+        <header>
+            <h1>Background Color Generator</h1>
+            <h4>Get a nice Linear-gradient colors for your amazing website.</h4>
+        </header>
+        <section>
+            <small>Select colors below:</small><br>
+            <input type="color" name="color1" id="first" value="#00ff00">
+            <input type="color" name="color2" id="second" value="#ff0000"><br>
+            <div class="select">
+                <h3 id="chosen"></h3> <input id="copy" type="button" value="Copy Gradient Style">
+            </div>
+        </section>
+        <footer>
+            <p>Copyright &copy; 2020 XpressIT. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script>
+        var color1 = document.querySelector('#first');
+        const color2 = document.querySelector('#second');
+        const body = document.querySelector('#body');
+        const chosen = document.querySelector('#chosen');
+        const copy = document.querySelector('#copy');
+        
+        const setBackground = ()=>{
+            body.style.background = 'linear-gradient(to right,'+color1.value+','+color2.value+')';
+            chosen.textContent = body.style.background +';';
+        }
+        color1.addEventListener('input',()=>{
+            setBackground();
+        }); 
+        color2.addEventListener('input',setBackground);
+      
+    </script>
+</body>
+</html>
