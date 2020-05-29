@@ -30,11 +30,16 @@
         const body = document.querySelector('#body');
         const chosen = document.querySelector('#chosen');
         const copy = document.querySelector('#copy');
+
+       
         
         const setBackground = ()=>{
             body.style.background = 'linear-gradient(to right,'+color1.value+','+color2.value+')';
             chosen.textContent = body.style.background +';';
         }
+        body.addEventListener('onLoad',()=>{
+           setBackground();
+       })
         color1.addEventListener('input',()=>{
             setBackground();
         }); 
